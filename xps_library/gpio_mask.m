@@ -20,6 +20,10 @@
 %                                                                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+if casper_hub_scan_active()
+    return
+end
+
 cursys = gcb;
 
 pos = get_param(cursys,'Position');

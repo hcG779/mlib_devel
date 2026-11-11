@@ -1,5 +1,9 @@
 function swreg_init(blk)
 
+if casper_hub_scan_active()
+    return
+end
+
 clog(sprintf('entering swreg_init(%s)', blk), 'trace');
 check_mask_type(blk, 'swreg');
 try

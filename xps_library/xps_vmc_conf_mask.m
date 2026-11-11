@@ -11,6 +11,8 @@ if ~strcmp(bdroot, 'xps_library')
     set_param(gcb, 'Name', hw_sys);
 
     % Model Composers hardware part needs to be set before a simulink 'update' (ctrl-D)
+    casper_hub_scan_active('enter');
+    scanCleanup = onCleanup(@() casper_hub_scan_active('leave'));
     vmchub_set_param(vmchub, gcs, 'SelectHardware', hw_subsys);
 
     % Other mask initialization can be done by calling functions in 'code'
